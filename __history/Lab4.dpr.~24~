@@ -26,7 +26,8 @@ begin
       X := A + I * H + (H / 2);
       Result := Result + Func(X);
     end;
-  until Abs(Result - Prev) > E;
+    Result := h * Result;
+  until Abs(Result - Prev) <= E;
 end;
 
 function MetodTrap(Integral: TIntegral; a, b:Real; eps: Real; var N: Integer): Real;
@@ -72,16 +73,31 @@ begin
   result:=cos(x)/(x+1);
 end;
 
+procedure Header;
+begin
+  Writeln('|---|-----------------------------------------------------------------------------|');
+  Writeln('|---|              1-й метод               |              2-й метод               |');
+  Writeln('|---|-------------------|------------------|-------------------|------------------|');
+  Writeln('|---|       10^-2       |      10^-3       |       10^-2       |       10^-3      |');
+  Writeln('|---|-------------|-----|------------|-----|-------------|-----|------------|-----|');
+  Writeln('|---|   Значение  |  N  |  Значение  |  N  |   Значение  |  N  |  Значение  |  N  |');
+  Writeln('|---|-------------|-----|------------|-----|-------------|-----|------------|-----|');
+  Writeln('|   |             |     |            |     |             |     |            |     |');
+end;
+
 var
-  f1, f2, f3, f4: Tintegral;
+  Val : Real;
   N: Integer;
 begin
-  f1:=func1;
-  f2:=func2;
-  f3:=func3;
-  f4:=func4;
-
-  Writeln(MetodTrap(f1,1,2.2,0.01,N));
-  Writeln(RectangleMethod(f1,1,2.2,0.1,N));
+  Header;
+  Write('| 1 | ');
+  Val := MetodTrap(func1, 1.0, 2.2, 0.01, N);
+  Write(Val:11:6, ' | ', N:3, ' | ');
+  Val := MetodTrap(func1, 1.0, 2.2, 0.001, N);
+  Write(Val:10:6, ' | ', N:3, ' | ');
+  Val := RectangleMethod(func1, 1.0, 2.2, 0.01, N);
+  Write(Val:11:6, ' | ', N:3, ' | ');
+  Val := RectangleMethod(func1, 1.0, 2.2, 0.001, N);
+  Write(Val:10:6, ' | ', N:3, ' | ');
   readln;
 end.

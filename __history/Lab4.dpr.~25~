@@ -14,7 +14,7 @@ var
   H, X, Prev: Real;
   I: integer;
 begin
-  Result :=  (b - a) *  Func(a);
+  Result := Func((B - A) / 2);
   N := 0;
   repeat
     N := N + 5;
@@ -36,7 +36,7 @@ var h: Real;
     i: Integer;
 begin
   N := 0;
-  Result :=  (b - a) *  Integral(a);
+  Result :=  Integral((b - a) / 2);
   repeat
     PrevI := Result;
     Inc(N,5);
@@ -82,10 +82,11 @@ begin
   Writeln('|---|-------------|-----|------------|-----|-------------|-----|------------|-----|');
   Writeln('|---|   Значение  |  N  |  Значение  |  N  |   Значение  |  N  |  Значение  |  N  |');
   Writeln('|---|-------------|-----|------------|-----|-------------|-----|------------|-----|');
+  Writeln('|   |             |     |            |     |             |     |            |     |');
 end;
 
 var
-  Val, A, B : Real;
+  Val : Real;
   func: TIntegral;
   N: Integer;
 begin
@@ -93,56 +94,46 @@ begin
 
   func := func1;
   Write('| 1 | ');
-  A := 1.0;
-  B := 2.2;
-  Val := MetodTrap(func, A, B, 0.01, N);
+  Val := MetodTrap(func, 1.0, 2.2, 0.01, N);
   Write(Val:11:6, ' | ', N:3, ' | ');
-  Val := MetodTrap(func, A, B, 0.001, N);
+  Val := MetodTrap(func, 1.0, 2.2, 0.001, N);
   Write(Val:10:6, ' | ', N:3, ' | ');
-  Val := RectangleMethod(func, A, B, 0.01, N);
+  Val := RectangleMethod(func, 1.0, 2.2, 0.01, N);
   Write(Val:11:6, ' | ', N:3, ' | ');
-  Val := RectangleMethod(func, A, B, 0.001, N);
+  Val := RectangleMethod(func, 1.0, 2.2, 0.001, N);
   Writeln(Val:10:6, ' | ', N:3, ' | ');
 
   func := func2;
   Write('| 2 | ');
-  A:= 0.6;
-  B:= 1.0;
-  Val := MetodTrap(func, A, B, 0.01, N);
+  Val := MetodTrap(func, 0.6, 1.0, 0.01, N);
   Write(Val:11:6, ' | ', N:3, ' | ');
-  Val := MetodTrap(func, A, B, 0.001, N);
+  Val := MetodTrap(func, 0.6, 1.0, 0.001, N);
   Write(Val:10:6, ' | ', N:3, ' | ');
-  Val := RectangleMethod(func, A, B, 0.01, N);
+  Val := RectangleMethod(func, 0.6, 1.0, 0.01, N);
   Write(Val:11:6, ' | ', N:3, ' | ');
-  Val := RectangleMethod(func, A, B, 0.001, N);
+  Val := RectangleMethod(func, 0.6, 1.0, 0.001, N);
   Writeln(Val:10:6, ' | ', N:3, ' | ');
 
   func := func3;
   Write('| 3 | ');
-  A:= 0.2;
-  B:= 1.2;
-  Val := MetodTrap(func, A, B, 0.01, N);
+  Val := MetodTrap(func, 0.2, 1.2, 0.01, N);
   Write(Val:11:6, ' | ', N:3, ' | ');
-  Val := MetodTrap(func, A, B, 0.001, N);
+  Val := MetodTrap(func, 0.2, 1.2, 0.001, N);
   Write(Val:10:6, ' | ', N:3, ' | ');
-  Val := RectangleMethod(func, A, B, 0.01, N);
+  Val := RectangleMethod(func, 0.2, 1.2, 0.01, N);
   Write(Val:11:6, ' | ', N:3, ' | ');
-  Val := RectangleMethod(func, A, B, 0.001, N);
+  Val := RectangleMethod(func, 0.2, 1.2, 0.001, N);
   Writeln(Val:10:6, ' | ', N:3, ' | ');
 
   func := func4;
   Write('| 4 | ');
-  A:= 0.6;
-  B:= 1.4;
-  Val := MetodTrap(func, A, B, 0.01, N);
+  Val := MetodTrap(func, 0.6, 1.4, 0.01, N);
   Write(Val:11:6, ' | ', N:3, ' | ');
-  Val := MetodTrap(func, A, B, 0.001, N);
+  Val := MetodTrap(func, 0.6, 1.4, 0.001, N);
   Write(Val:10:6, ' | ', N:3, ' | ');
-  Val := RectangleMethod(func, A, B, 0.01, N);
+  Val := RectangleMethod(func, 0.6, 1.4, 0.01, N);
   Write(Val:11:6, ' | ', N:3, ' | ');
-  Val := RectangleMethod(func, A, B, 0.001, N);
-  Writeln(Val:10:6, ' | ', N:3, ' | ');
-
-   Writeln('|---|-----------------------------------------------------------------------------|');
+  Val := RectangleMethod(func, 0.6, 1.4, 0.001, N);
+  Write(Val:10:6, ' | ', N:3, ' | ');
   readln;
 end.
