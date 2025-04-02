@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.669,=D:\Университет\Delphi\Unit2.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.543,=D:\Университет\Delphi\Unit2.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.582,=D:\Университет\Delphi\Unit2.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.803,D:\Университет\Delphi\Project3.dproj=D:\Университет\1 курс\ОАиП\4lab\Lab-4\Lab4.dproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.063,=D:\Университет\Delphi\Unit2.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.200,=D:\Университет\Delphi\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.803,D:\Университет\1 курс\ОАиП\4lab\Lab-4\Lab4.dproj=D:\Университет\Delphi\Project3.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.669,=D:\Университет\Delphi\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.543,=D:\Университет\Delphi\Unit2.pas</Transaction>
   </Transactions>
 </BorlandProject>
