@@ -26,7 +26,6 @@ begin
       X := A + I * H + (H / 2);
       Result := Result + Func(X);
     end;
-    Result := h * Result;
   until Abs(Result - Prev) <= E;
 end;
 

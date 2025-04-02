@@ -26,8 +26,7 @@ begin
       X := A + I * H + (H / 2);
       Result := Result + Func(X);
     end;
-    Result := h * Result;
-  until Abs(Result - Prev) <= E;
+  until Abs(Result - Prev) > E;
 end;
 
 function MetodTrap(Integral: TIntegral; a, b:Real; eps: Real; var N: Integer): Real;
