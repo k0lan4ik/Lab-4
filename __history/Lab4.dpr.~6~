@@ -1,0 +1,36 @@
+program Lab4;
+
+{$APPTYPE CONSOLE}
+{$R *.res}
+
+uses
+  System.SysUtils;
+
+type
+  TIntegral = function(X: Real): Real;
+
+function RectangleMethod(Func: TIntegral; A, B, E: Real; var N: integer): Real;
+var
+  H, Sum, X, Prev: Real;
+  I: integer;
+begin
+  Prev := Func((B - A / )2);
+  N := 5;
+  H := (B - A) / N;
+  Sum := 0;
+  for I := 0 to (N - 1) do
+  begin
+    X := A + I * H + (H / 2);
+    Sum := Sum + Func(X);
+  end;
+end;
+
+begin
+  try
+    { TODO -oUser -cConsole Main : Insert code here }
+  except
+    on E: Exception do
+      Writeln(E.ClassName, ': ', E.Message);
+  end;
+
+end.
