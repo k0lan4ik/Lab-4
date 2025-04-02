@@ -35,11 +35,11 @@ var h: Real;
     i: Integer;
 begin
   N := 0;
-  Result :=  Integral((b - a) / 2);
+
   repeat
-    PrevI := Result;
     Inc(N,5);
     h := (b-a) / N;
+    prevI := (b - a) * Integral(a);
     xi := a + h;
     Result := 0;
     for i := 1 to N-1 do
@@ -47,7 +47,9 @@ begin
       Result := Result + Integral(xi);
       xi := xi + h;
     end;
-    Result := (Result + (Integral(a) + Integral(xi)) / 2) * h;
+    Result := Result + (Integral(a) + Integral(xi)) / 2;
+    Result := Result * h;
+
   until Abs(Result - prevI) <= eps;
 
 end;
@@ -81,7 +83,7 @@ begin
   f3:=func3;
   f4:=func4;
 
-  Writeln(MetodTrap(f1,1,2.2,0.01,N):10:5);
-  Writeln(RectangleMethod(f1,1,2.2,0.1,N):10:5);
+  Writeln(MetodTrap(f1,1,2.2,0.01,N));
+  Writeln(RectangleMethod(f1,1,2.2,0.01,N));
   readln;
 end.

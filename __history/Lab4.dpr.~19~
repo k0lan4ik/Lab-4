@@ -35,7 +35,7 @@ var h: Real;
     i: Integer;
 begin
   N := 0;
-  Result :=  Integral((b - a) / 2);
+  Result :=  (b - a) * Integral(a);
   repeat
     PrevI := Result;
     Inc(N,5);
@@ -81,7 +81,7 @@ begin
   f3:=func3;
   f4:=func4;
 
-  Writeln(MetodTrap(f1,1,2.2,0.01,N):10:5);
-  Writeln(RectangleMethod(f1,1,2.2,0.1,N):10:5);
+  Writeln(MetodTrap(f1,1,2.2,0.01,N));
+  Writeln(RectangleMethod(f1,1,2.2,0.1,N));
   readln;
 end.
